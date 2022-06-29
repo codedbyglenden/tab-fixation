@@ -82,6 +82,6 @@ const focusTrapLoop = (e) => {
  * @since 1.0.0
  * @return void
  */
-export const removeFocusTrap = ( parentId ) => {
+export const removeFixation = ( parentId ) => {
     document.getElementById( parentId ).removeEventListener( 'keydown', focusTrapLoop );
 };
