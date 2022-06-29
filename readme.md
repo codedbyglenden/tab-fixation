@@ -50,6 +50,12 @@ if ( document.getElementById( 'parent_element' ) ) {
 
 ```
 
+### Codepen Example
+
+```html
+https://codepen.io/TheOneAndOnlyZulu/pen/OJvPPrZ
+```
+
 ## Objectives
 
 This package aims to be:
@@ -57,13 +63,10 @@ This package aims to be:
 - Fully accessible: Complying to the latest <a href="https://www.w3.org/TR/WCAG21/">WCAG guidelines</a>, to AAA standard.
 - Lightweight: Website load times are key, not only to the ranking of your site, but the user experience. This package will always remain as small as possible, & never weigh you down.
 
-## How do I make it work?
-
-The <a href="https://github.com/TheOneAndOnlyZulu/tab-fixation/wiki">Github wiki</a> is where you'll find documentation for everything you'll need to know about working with & on this plugin should you want to add something that's missing.
 
 ## Help me, I'm stuck!
 
-Read through the <a href="https://github.com/TheOneAndOnlyZulu/tab-fixation/wiki">wiki</a> and still can't get it to work? Pop over to the <a href="https://github.com/TheOneAndOnlyZulu/tab-fixation/discussions">discussions board</a>, and we'll give you a hand.
+Pop over to the <a href="https://github.com/TheOneAndOnlyZulu/tab-fixation/discussions">discussions board</a>.
 
 ## I've got an idea?
 
