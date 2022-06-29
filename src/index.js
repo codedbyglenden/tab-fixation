@@ -47,7 +47,7 @@ export const initiateFixation = ( parentId ) => {
  * @since 1.0.0
  * @return void
  */
-const focusTrapLoop = (parentNode) => {
+const focusTrapLoop = (e) => {
 
     const firstFocusableEl = e.currentTarget.firstFocusableEl;
     const lastFocusableEl = e.currentTarget.lastFocusableEl;
