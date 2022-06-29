@@ -1,5 +1,5 @@
 /**
- * Fixation, the focus trap library.
+ * Tab Fixation, the focus trap library.
  * 
  * @version 1.0.0
  */
@@ -12,7 +12,7 @@
  * @since 1.0.0
  * @return void
 */
-export const initiateFixation = ( parentId ) => {
+export const initFixation = ( parentId ) => {
     
     // Query select the modal.
     const parentContainer = document.querySelector( '#' + parentId );

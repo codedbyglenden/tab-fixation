@@ -1,10 +1,10 @@
 {
-    "name": "fixation",
-    "version": "1.0.0",
+    "name": "tab-tab-fixation",
+    "version": "1.0.1",
     "description": "A small Javascript library to focus trap a user on your website, to help comply with W3C accessibility guidelines.",
-    "main": "dist/fixation.min.js",
-    "module": "dist/fixation.esm.js",
-    "bundle": "dist/fixation.umd.js",
+    "main": "dist/index.min.js",
+    "module": "dist/index.esm.js",
+    "bundle": "dist/index.umd.js",
     "scripts": {
       "build": "rollup -c --environment NODE_ENV:production",
       "dev": "rollup -c --environment NODE_ENV:development",
@@ -21,7 +21,7 @@
     ],
     "repository": {
       "type": "git",
-      "url": "git+https://github.com/TheOneAndOnlyZulu/fixation.git"
+      "url": "git+https://github.com/TheOneAndOnlyZulu/tab-fixation.git"
     },
     "keywords": [
       "W3C",
@@ -33,9 +33,9 @@
     "author": "TheOneAndOnlyZulu",
     "license": "GPL-3.0-or-later",
     "bugs": {
-      "url": "https://github.com/TheOneAndOnlyZulu/fixation/issues"
+      "url": "https://github.com/TheOneAndOnlyZulu/tab-fixation/issues"
     },
-    "homepage": "https://github.com/TheOneAndOnlyZulu/fixation#readme",
+    "homepage": "https://github.com/TheOneAndOnlyZulu/tab-fixation#readme",
     "devDependencies": {
       "@babel/core": "^7.17.5",
       "@babel/preset-env": "^7.16.11",

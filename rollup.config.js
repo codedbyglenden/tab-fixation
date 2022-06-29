@@ -16,7 +16,7 @@ export default {
     {
       file: pkg.main,
       format: 'iife',
-      name: 'Fixation',
+      name: 'index',
       sourcemap: devMode ? 'inline' : false,
       plugins: [
         terser({
@@ -51,7 +51,7 @@ export default {
     {
       file: pkg.bundle,
       format: "umd",
-      name: 'Fixation',
+      name: 'index',
       sourcemap: devMode ? 'inline' : false,
       plugins: [
         terser({
