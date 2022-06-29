@@ -50,6 +50,12 @@ if ( document.getElementById( 'parent_element' ) ) {
 
 ```
 
+### Codepen Example
+
+```html
+https://codepen.io/TheOneAndOnlyZulu/pen/OJvPPrZ
+```
+
 ## Objectives
 
 This package aims to be:
