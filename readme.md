@@ -55,7 +55,7 @@ if ( document.getElementById( 'parent_element' ) ) {
 This package aims to be:
 
 - Fully accessible: Complying to the latest <a href="https://www.w3.org/TR/WCAG21/">WCAG guidelines</a>, to AAA standard.
-- Lightweight: We known webiste load times are key, not only to the ranking of your site, but the user experience. Our package will always remain as small as possible, & never weigh you down.
+- Lightweight: Website load times are key, not only to the ranking of your site, but the user experience. This package will always remain as small as possible, & never weigh you down.
 
 ## How do I make it work?
 
@@ -67,4 +67,4 @@ Read through the <a href="https://github.com/TheOneAndOnlyZulu/tab-fixation/wiki
 
 ## I've got an idea?
 
-Got ideas on how to improve this package, but not sure how to persue them? Head over to the <a href="https://github.com/TheOneAndOnlyZulu/tab-fixation/discussions">discussion section</a> of the repo, or if you've got the know how create a pull request. Sharing is caring.
+Got ideas on how to improve this package, but not sure how to persue them? Head over to the <a href="https://github.com/TheOneAndOnlyZulu/tab-fixation/discussions">discussion section</a> of the repo, or if you've got the know how create a pull request.

@@ -1,6 +1,6 @@
 {
-    "name": "tab-tab-fixation",
-    "version": "1.0.1",
+    "name": "tab-fixation",
+    "version": "1.0.2",
     "description": "A small Javascript library to focus trap a user on your website, to help comply with W3C accessibility guidelines.",
     "main": "dist/index.min.js",
     "module": "dist/index.esm.js",
