@@ -7,20 +7,18 @@
 /**
  * Creates a focus trap so the user can't tab the rest of the page while the modal is open.
  *
- * @param {*} parentId The DOM ID of the div you wish to trap focus within.
+ * @param {DOM Node} parentSelector The Parent node to contain focus.
  * 
  * @since 1.0.0
  * @return void
 */
-export const initFixation = ( parentId ) => {
+export const initFixation = ( parentSelector ) => {
     
-    // Query select the modal.
-    const parentContainer = document.querySelector( '#' + parentId );
-    
+    // List of focusable elements.
     const focusableEl = 'a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])';
 
     // Get all of the child items that can be tabbed to.
-    const selectableItems = parentContainer.querySelectorAll(
+    const selectableItems = parentSelector.querySelectorAll(
         focusableEl
     );
     
@@ -33,10 +31,10 @@ export const initFixation = ( parentId ) => {
         firstFocusableEl.focus();
     }
 
-    parentContainer.addEventListener( 'keydown', focusTrapLoop, false);
+    parentSelector.addEventListener( 'keydown', focusTrapLoop, false);
     
-    parentContainer.firstFocusableEl = firstFocusableEl;
-    parentContainer.lastFocusableEl  = lastFocusableEl;
+    parentSelector.firstFocusableEl = firstFocusableEl;
+    parentSelector.lastFocusableEl  = lastFocusableEl;
 }
 
 /**
@@ -77,11 +75,11 @@ const focusTrapLoop = (e) => {
 /**
  * Removes a focus trap.
  * 
- * @param parentId The id of the node you are removing the focus trap on.
+ * @param {DOM Node} parentSelector The Parent node to remove focus from.
  * 
  * @since 1.0.0
  * @return void
  */
-export const removeFixation = ( parentId ) => {
-    document.getElementById( parentId ).removeEventListener( 'keydown', focusTrapLoop );
+export const removeFixation = ( parentSelector ) => {
+    parentSelector.removeEventListener( 'keydown', focusTrapLoop );
 };

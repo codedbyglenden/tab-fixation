@@ -36,18 +36,26 @@ Using unpkg CDN:
 ## Example
 
 ```js
-
 import {initFixation, removeFixation} from 'tab-fixation';
 
-if ( document.getElementById( 'parent_element' ) ) {
+const focusbutton       = document.getElementById( 'focus_parent_button' );
+const removeFocusButton = document.getElementById( 'focus_parent_button' );
+const divToFocus        = document.getElementById( 'parent_element' );
 
-	// Init tab fixation.
-	initFixation( 'parent_element' );
+if ( focus_parent_button && divToFocus ) {
 
-	// Remove tab fixation.
-	removeFixation( 'parent_element' );
+	// Contain focus within the div with the id: parent_element.
+	focusbutton.addEventListener( 'click', () =>{
+		// Init tab fixation.
+		initFixation( divToFocus );
+	}); 
+	
+	// Remove focus from the div with the id: parent_element.
+	removeFocusButton.addEventListener( 'click', () =>{
+		// Remove tab fixation.
+		removeFixation( divToFocus );
+	}); 
 }
-
 ```
 
 ### Codepen Example
