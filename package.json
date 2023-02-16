@@ -1,6 +1,6 @@
 {
     "name": "tab-fixation",
-    "version": "1.1.1",
+    "version": "1.2.0",
     "description": "A small Javascript library to focus trap a user on your website, to help comply with W3C accessibility guidelines.",
     "main": "dist/index.min.js",
     "module": "dist/index.esm.js",
@@ -12,16 +12,16 @@
       "test-js": "eslint src/**/*.js"
     },
     "browserslist": [
-      "chrome 98",
+      "chrome 106",
       "edge 98",
-      "firefox 98",
+      "firefox 105",
       "ios_saf 15",
-      "opera 82",
+      "opera 92",
       "safari 15"
     ],
     "repository": {
       "type": "git",
-      "url": "git+https://github.com/TheOneAndOnlyZulu/tab-fixation.git"
+      "url": "git+https://github.com/codedbyglenden/tab-fixation.git"
     },
     "keywords": [
       "W3C",
@@ -30,26 +30,22 @@
       "Vanilla JS",
       "JavaScript"
     ],
-    "author": "TheOneAndOnlyZulu",
+    "author": "CodedByGlenden",
     "license": "GPL-3.0-or-later",
     "bugs": {
-      "url": "https://github.com/TheOneAndOnlyZulu/tab-fixation/issues"
+      "url": "https://github.com/codedbyglenden/tab-fixation/issues"
     },
-    "homepage": "https://github.com/TheOneAndOnlyZulu/tab-fixation#readme",
+    "homepage": "https://github.com/codedbyglenden/tab-fixation#readme",
     "devDependencies": {
-      "@babel/core": "^7.17.5",
-      "@babel/preset-env": "^7.16.11",
+      "@babel/core": "^7.20.12",
+      "@babel/preset-env": "^7.20.2",
       "@rollup/plugin-babel": "^5.3.1",
-      "@rollup/plugin-commonjs": "^21.0.2",
-      "@rollup/plugin-json": "^4.1.0",
-      "@rollup/plugin-node-resolve": "^13.1.3",
-      "eslint": "^8.10.0",
-      "rollup": "^2.69.2",
+      "@rollup/plugin-commonjs": "^24.0.1",
+      "eslint": "^8.34.0",
+      "rollup": "^2.75.7",
       "rollup-plugin-terser": "^7.0.2"
     },
     "files": [
       "dist"
-    ],
-    "dependencies": {
-    }
+    ]
   }
