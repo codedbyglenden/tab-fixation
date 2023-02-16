@@ -1,7 +1,7 @@
 /**
  * Tab Fixation, the focus trap library.
  * 
- * @version 1.0.0
+ * @version 1.2.0
  */
 
 /**
@@ -13,64 +13,78 @@
  * @return void
 */
 export const initFixation = ( parentSelector ) => {
-    
-    // List of focusable elements.
-    const focusableEl = 'a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])';
 
-    // Get all of the child items that can be tabbed to.
+    // Query all the child items that can be tab to.
     const selectableItems = parentSelector.querySelectorAll(
-        focusableEl
+        'a[href]:not([disabled]),button:not([disabled]),textarea:not([disabled]),input:not([disabled]),select:not([disabled]),[tabindex="0"]'
     );
-    
+
     // The first & last item in the list so we can skip to them at the start/end of the trap.
     const firstFocusableEl = selectableItems[0];
-    const lastFocusableEl = selectableItems[ selectableItems.length - 1 ];
+    const lastFocusableEl  = selectableItems[ selectableItems.length - 1 ];
     
+    // If the first focus doesn't exist we do nothing.
     if ( firstFocusableEl ) {
-        // Focus the first focusable item.
-        firstFocusableEl.focus();
-    }
+        focus( firstFocusableEl );
 
-    parentSelector.addEventListener( 'keydown', focusTrapLoop, false);
+        parentSelector.addEventListener( 'keydown', focusTrapLoop, false );
     
-    parentSelector.firstFocusableEl = firstFocusableEl;
-    parentSelector.lastFocusableEl  = lastFocusableEl;
+        parentSelector.firstFocus = firstFocusableEl;
+        parentSelector.lastFocus  = lastFocusableEl;
+    }
 }
 
 /**
  * The loop functionality of the focus trap.
  *
- * @param e
+ * @param {Node} e The Parent Element.
  * 
  * @since 1.0.0
  * @return void
  */
 const focusTrapLoop = (e) => {
 
-    const firstFocusableEl = e.currentTarget.firstFocusableEl;
-    const lastFocusableEl = e.currentTarget.lastFocusableEl;
+    // Define consts for reuse.
+    const activeEl = document.activeElement;
+
+    // Select the first & last.
+    const current          = e.currentTarget;
+    const firstFocusableEl = current.firstFocus;
+    const lastFocusableEl  = current.lastFocus;
 
     // If the user clicks the tab key.
-    if (e.key === 'Tab' || e.keyCode === 9) {
+    if ( e.key === 'Tab' || e.keyCode === 9 ) {
         
         // If the user clicks shift + tab (go to the previous tab item)
         if ( e.shiftKey ) {
 
             // If first item, and the user wants to go back select the last item in the trap.
-            if (document.activeElement === firstFocusableEl) {
-                lastFocusableEl.focus();
-                e.preventDefault();
+            if  ( activeEl === firstFocusableEl ) {
+                focus( lastFocusableEl, e );
             }
         } else {
 
             // We're at the last item, select the first item in the trap.
-            if (document.activeElement === lastFocusableEl) {
-                firstFocusableEl.focus();
-                e.preventDefault();
+            if ( activeEl === lastFocusableEl ) {
+                focus( firstFocusableEl, e );
             }
         }
     }
 };
+
+/**
+ * Focus the element provided & prevent default.
+ *
+ * @param {Node} element Element to focus.
+ * @param {Node} default Prevent default functionality.
+ * 
+ * @since 1.2.0
+ * @return void
+ */
+const focus = (element, e = false) => {
+    element.focus();
+    e && e.preventDefault();
+}
     
 /**
  * Removes a focus trap.

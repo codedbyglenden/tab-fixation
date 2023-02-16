@@ -6,12 +6,6 @@ const devMode = (process.env.NODE_ENV === 'development');
 
 export default {
   input: './src/index.js',
-  // plugins: [
-  //   babel({
-  //     exclude: ["node_modules/**"],
-  //     babelHelpers: 'bundled'
-  //   }),
-  // ],
   output: [
     {
       file: pkg.main,
