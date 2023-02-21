@@ -28,7 +28,11 @@
       "Focus Trap",
       "Accessibility",
       "Vanilla JS",
-      "JavaScript"
+      "JavaScript",
+      "focus",
+      "lock",
+      "trap",
+      "tabbable"
     ],
     "author": "CodedByGlenden",
     "license": "GPL-3.0-or-later",
