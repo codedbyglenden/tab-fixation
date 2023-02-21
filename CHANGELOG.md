@@ -1,3 +1,9 @@
+## Improved readme - [1.2.1] [Minor]
+
+* **Feature** - *Improved readme*
+
+**Release Date:** 21/02/2023
+
 ## DRY Code Update - [1.2.0] [Patch]
 
 * **Feature** - *Added changelog*
