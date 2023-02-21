@@ -4,8 +4,11 @@
 
 # About Tab Fixation
 
-Tab Fixation is a small focus trap library coded in Vanilla JS & bundled up with rollup. 
+A simple yet powerful library that can help improve the accessibility of your website for visually impaired users.
 
+Tab-fixation is a lightweight vanilla JavaScript package that traps the users keyboard focus, so thay they can only navigate between a select number of DOM nodes. This is particularly helpful for visually impaired users who may be using screen readers to navigate around your website. Especially if you're using popup modals, where users can find themselves tabbing through the entirity of the site, while a modal is still open infront of them. 
+
+By isolating the user's focus and preventing them from getting lost or confused, you can create a more user-friendly experience that everyone can enjoy.
 
 ## Browser Support
 
