@@ -1,3 +1,9 @@
+## Documentation updates - [1.2.2] [Minor]
+
+* **Feature** - *Updated all links to new profile url*
+
+**Release Date:** 24/02/2023
+
 ## Improved readme - [1.2.1] [Minor]
 
 * **Feature** - *Improved readme*

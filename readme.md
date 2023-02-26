@@ -1,6 +1,6 @@
-<img alt="GitHub package.json version (subfolder of monorepo)" src="https://img.shields.io/github/package-json/v/TheOneAndOnlyZulu/tab-fixation"> <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/min/tab-fixation" /> <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/minzip/tab-fixation" />
-[![ES Lint](https://github.com/TheOneAndOnlyZulu/tab-fixation/actions/workflows/eslint.yml/badge.svg)](https://github.com/TheOneAndOnlyZulu/tab-fixation/actions/workflows/eslint.yml)
-[![CodeQL](https://github.com/TheOneAndOnlyZulu/tab-fixation/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/TheOneAndOnlyZulu/tab-fixation/actions/workflows/codeql-analysis.yml)
+<img alt="GitHub package.json version (subfolder of monorepo)" src="https://img.shields.io/github/package-json/v/codedbyglenden/tab-fixation"> <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/min/tab-fixation" /> <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/minzip/tab-fixation" />
+[![ES Lint](https://github.com/codedbyglenden/tab-fixation/actions/workflows/eslint.yml/badge.svg)](https://github.com/codedbyglenden/tab-fixation/actions/workflows/eslint.yml)
+[![CodeQL](https://github.com/codedbyglenden/tab-fixation/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/codedbyglenden/tab-fixation/actions/workflows/codeql-analysis.yml)
 
 # About Tab Fixation
 
@@ -42,30 +42,41 @@ Using unpkg CDN:
 ```js
 import {initFixation, removeFixation} from 'tab-fixation';
 
+// A button to start & end fixation.
 const focusbutton       = document.getElementById( 'focus_parent_button' );
 const removeFocusButton = document.getElementById( 'focus_parent_button' );
-const divToFocus        = document.getElementById( 'parent_element' );
 
-if ( focus_parent_button && divToFocus ) {
+/**
+ * This is the parent node you would like to focus.
+ * Once you initialise focus using this node as a parameter,
+ * clicking the tab key will only allow you to move the focus ring
+ * amoungts focusable children of this element.
+ */
+const divToFocus = document.getElementById( 'parent_element' );
 
-	// Contain focus within the div with the id: parent_element.
-	focusbutton.addEventListener( 'click', () =>{
-		// Init tab fixation.
-		initFixation( divToFocus );
-	}); 
-	
-	// Remove focus from the div with the id: parent_element.
-	removeFocusButton.addEventListener( 'click', () =>{
-		// Remove tab fixation.
-		removeFixation( divToFocus );
-	}); 
-}
+/**
+ * On click only allow the user to tab between
+ * the child elements of "divToFocus". 
+ */
+focusbutton.addEventListener( 'click', () =>{
+	// Init tab fixation.
+	initFixation( divToFocus );
+}); 
+
+/**
+ * On Click remove the focus trap & allow the user to
+ * continue tabbing through the site as they normally would.
+ */
+removeFocusButton.addEventListener( 'click', () =>{
+	// Remove tab fixation.
+	removeFixation( divToFocus );
+}); 
 ```
 
 ### Codepen Example
 
 ```html
-https://codepen.io/TheOneAndOnlyZulu/pen/OJvPPrZ
+https://codepen.io/codedbyglenden/pen/OJvPPrZ
 ```
 
 ## Objectives
@@ -78,8 +89,8 @@ This package aims to be:
 
 ## Help me, I'm stuck!
 
-Pop over to the <a href="https://github.com/TheOneAndOnlyZulu/tab-fixation/discussions">discussions board</a>.
+Pop over to the <a href="https://github.com/codedbyglenden/tab-fixation/discussions">discussions board</a>.
 
 ## I've got an idea?
 
-Got ideas on how to improve this package, but not sure how to persue them? Head over to the <a href="https://github.com/TheOneAndOnlyZulu/tab-fixation/discussions">discussion section</a> of the repo, or if you've got the know how create a pull request.
+Got ideas on how to improve this package, but not sure how to persue them? Head over to the <a href="https://github.com/codedbyglenden/tab-fixation/discussions">discussion section</a> of the repo, or if you've got the know how create a pull request.
