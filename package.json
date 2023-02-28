@@ -1,6 +1,6 @@
 {
     "name": "tab-fixation",
-    "version": "1.2.1",
+    "version": "2.0.0",
     "description": "A small Javascript library to focus trap a user on your website, to help comply with W3C accessibility guidelines.",
     "main": "dist/index.min.js",
     "module": "dist/index.esm.js",
@@ -28,7 +28,11 @@
       "Focus Trap",
       "Accessibility",
       "Vanilla JS",
-      "JavaScript"
+      "JavaScript",
+      "focus",
+      "lock",
+      "trap",
+      "tabbable"
     ],
     "author": "CodedByGlenden",
     "license": "GPL-3.0-or-later",
