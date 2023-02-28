@@ -40,7 +40,7 @@ Using unpkg CDN:
 ## Example
 
 ```js
-import {initFixation, removeFixation} from 'tab-fixation';
+import tabFixation from 'tab-fixation';
 
 // A button to start & end fixation.
 const focusbutton       = document.getElementById( 'focus_parent_button' );
@@ -54,13 +54,15 @@ const removeFocusButton = document.getElementById( 'focus_parent_button' );
  */
 const divToFocus = document.getElementById( 'parent_element' );
 
+const focusTrap = new tabFixation();
+
 /**
  * On click only allow the user to tab between
  * the child elements of "divToFocus". 
  */
 focusbutton.addEventListener( 'click', () =>{
 	// Init tab fixation.
-	initFixation( divToFocus );
+	focusTrap.init( divToFocus );
 }); 
 
 /**
@@ -69,7 +71,7 @@ focusbutton.addEventListener( 'click', () =>{
  */
 removeFocusButton.addEventListener( 'click', () =>{
 	// Remove tab fixation.
-	removeFixation( divToFocus );
+	focusTrap.remove();
 }); 
 ```
 

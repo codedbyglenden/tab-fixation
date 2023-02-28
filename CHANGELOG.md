@@ -1,14 +1,19 @@
-## Documentation updates - [1.2.2] [Minor]
+## Switched to class codebase - [2.0.0] [Major]
 
-* **Feature** - *Updated all links to new profile url*
+* **Feature** - *Switched to class codebase*
+* **Improvement** - *Updated all links to new profile url*
+* **Improvement** - *Updated documentation & example codepen inline with code updates*
+* **Improvement** - *Fixed bug that would allow the users focus to fall outside of the parent element*
 
-**Release Date:** 24/02/2023
+**Release Date:** 28/02/2023
+
 
 ## Improved readme - [1.2.1] [Minor]
 
 * **Feature** - *Improved readme*
 
 **Release Date:** 21/02/2023
+
 
 ## DRY Code Update - [1.2.0] [Patch]
 
