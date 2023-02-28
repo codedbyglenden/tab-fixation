@@ -1,9 +1,9 @@
 ## Switched to class codebase - [2.0.0] [Major]
 
-* **Feature** - *Switched to class codebase*
+* **Breaking Change** - *Switched to class codebase, see new code examples on how to use the library*
 * **Improvement** - *Updated all links to new profile url*
 * **Improvement** - *Updated documentation & example codepen inline with code updates*
-* **Improvement** - *Fixed bug that would allow the users focus to fall outside of the parent element*
+* **Bugfix** - *Fixed bug that would allow the users focus to fall outside of the parent element*
 
 **Release Date:** 28/02/2023
 

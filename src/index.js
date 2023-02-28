@@ -11,20 +11,21 @@
  */
 class TabFixation {
 
+    #selectableItems;
+    #firstFocusableEl;
+    #lastFocusableEl;
+    #parentEl;
+    #queryParams = 'a[href]:not([disabled]),button:not([disabled]),textarea:not([disabled]),input:not([disabled]),select:not([disabled]),[tabindex="0"],video[controls]';
+    #eventHandler;
+
     /**
      * Initialise base variables.
      * 
      * @since 2.0.0
      * @return void
     */
-    constructor() {
-        this.selectableItems  = [];
-        this.firstFocusableEl = null;
-        this.lastFocusableEl  = null;
-        this.parentEl         = null;
-        this.queyrParams      = 'a[href]:not([disabled]),button:not([disabled]),textarea:not([disabled]),input:not([disabled]),select:not([disabled]),[tabindex="0"],video[controls]';
-    
-        this.eventHandler = this.loop.bind(this);
+    constructor() {    
+        this.#eventHandler = this.#loop.bind(this);
     }
 
     /**
@@ -37,22 +38,22 @@ class TabFixation {
     */
     init( parentSelector ) {
 
-        this.parentEl = parentSelector;
+        this.#parentEl = parentSelector;
 
          // Query all the child items that can be tab to.
-        this.selectableItems = this.parentEl.querySelectorAll(
-            this.queyrParams
+        this.#selectableItems = this.#parentEl.querySelectorAll(
+            this.#queryParams
         );
 
         // The first & last item in the list so we can skip to them at the start/end of the trap.
-        this.firstFocusableEl = this.selectableItems[0];
-        this.lastFocusableEl  = this.selectableItems[ this.selectableItems.length - 1 ] ? this.selectableItems[ this.selectableItems.length - 1 ] : this.firstFocusableEl;
+        this.#firstFocusableEl = this.#selectableItems[0];
+        this.#lastFocusableEl  = this.#selectableItems[ this.#selectableItems.length - 1 ] ? this.#selectableItems[ this.#selectableItems.length - 1 ] : this.#firstFocusableEl;
         
         // If the first focus doesn't exist we do nothing.
-        if ( this.firstFocusableEl ) {
-            this.focus( this.firstFocusableEl );
+        if ( this.#firstFocusableEl ) {
+            this.#focus( this.#firstFocusableEl );
 
-            window.addEventListener( 'keydown', this.eventHandler, false );
+            window.addEventListener( 'keydown', this.#eventHandler, false );
         }
     }
 
@@ -64,7 +65,7 @@ class TabFixation {
      * @since 1.0.0
      * @return void
      */
-    loop(e) {
+    #loop(e) {
 
         // Define consts for reuse.
         const activeEl = document.activeElement;
@@ -72,22 +73,22 @@ class TabFixation {
         // If the user clicks the tab key.
         if ( e.key === 'Tab' || e.keyCode === 9 ) {
 
-            if ( ! this.parentEl.contains( activeEl ) ) {
-                this.focus( this.firstFocusableEl, e );
+            if ( ! this.#parentEl.contains( activeEl ) ) {
+                this.#focus( this.#firstFocusableEl, e );
             }
 
             // If the user clicks shift + tab (go to the previous tab item)
             if ( e.shiftKey ) {
 
                 // If first item, and the user wants to go back select the last item in the trap.
-                if  ( activeEl === this.firstFocusableEl ) {
-                    this.focus( this.lastFocusableEl, e );
+                if  ( activeEl === this.#firstFocusableEl ) {
+                    this.#focus( this.#lastFocusableEl, e );
                 }
             } else {
 
                 // We're at the last item, select the first item in the trap.
-                if ( activeEl === this.lastFocusableEl ) {
-                    this.focus( this.firstFocusableEl, e );
+                if ( activeEl === this.#lastFocusableEl ) {
+                    this.#focus( this.#firstFocusableEl, e );
                 }
             }
         }
@@ -102,7 +103,7 @@ class TabFixation {
      * @since 1.2.0
      * @return void
      */
-    focus( element, e = false ) {
+    #focus( element, e = false ) {
         element.focus();
         e && e.preventDefault();
     }
@@ -116,7 +117,7 @@ class TabFixation {
      * @return void
      */
     remove() {
-        window.removeEventListener( 'keydown', this.eventHandler );
+        window.removeEventListener( 'keydown', this.#eventHandler );
     }
 }
 

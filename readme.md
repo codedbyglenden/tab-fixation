@@ -54,6 +54,7 @@ const removeFocusButton = document.getElementById( 'focus_parent_button' );
  */
 const divToFocus = document.getElementById( 'parent_element' );
 
+// Initialise the fixation class.
 const focusTrap = new tabFixation();
 
 /**
