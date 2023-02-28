@@ -78,7 +78,7 @@ removeFocusButton.addEventListener( 'click', () =>{
 ### Codepen Example
 
 ```html
-https://codepen.io/codedbyglenden/pen/OJvPPrZ
+https://codepen.io/codedbyglenden/pen/vYzgxNQ
 ```
 
 ## Objectives
